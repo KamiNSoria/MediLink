@@ -6,6 +6,17 @@ Cada hospital es un nodo autónomo que se comunica con los demás mediante event
 
 > Estado actual: **prototipo del front** con datos simulados, para explicar la idea. No hay backend.
 
+## Cómo ver el prototipo
+
+Abre `dashboard/index.html` en el navegador (doble clic), o en VS Code con la extensión **Live Server** (clic derecho > *Open with Live Server*).
+
+Qué mostrar:
+
+1. **+ Paciente crítico**: el paciente llega a un hospital, los demás ofrecen cama y medicina, y la red propone el combo.
+2. **Aprobar traslado**: se descuenta el inventario y se dibuja el traslado en el mapa.
+3. Esperar 30 s sin aprobar: la reserva expira (TTL) y se libera sola.
+4. **Simular caída** (o clic en un nodo): la red sigue funcionando sin ese hospital; al volver, sincroniza los eventos que se perdió.
+
 ## Flujo de ramas
 
 | Rama | Uso |

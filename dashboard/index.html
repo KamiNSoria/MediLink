@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediLink · Prototipo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="barra">
+    <div class="marca">
+      <span class="logo">✚</span>
+      <div>
+        <h1>MediLink</h1>
+        <p>Red distribuida de triaje y abastecimiento hospitalario · <em>prototipo con datos simulados</em></p>
+      </div>
+    </div>
+    <div class="acciones">
+      <button id="btn-paciente" class="btn primario">+ Paciente crítico</button>
+      <button id="btn-caida" class="btn">Simular caída</button>
+      <button id="btn-reiniciar" class="btn suave">Reiniciar</button>
+    </div>
+  </header>
+
+  <ol class="pasos" id="pasos">
+    <li data-paso="1"><b>1</b> Llega un paciente crítico</li>
+    <li data-paso="2"><b>2</b> Los hospitales ofrecen cama y medicina</li>
+    <li data-paso="3"><b>3</b> Se propone el combo</li>
+    <li data-paso="4"><b>4</b> Se aprueba el traslado</li>
+  </ol>
+
+  <main class="grid">
+    <section class="panel mapa">
+      <h2>Red de hospitales</h2>
+      <p class="ayuda">Cada hospital es un nodo autónomo. Se comunican solo mediante eventos a través del bus. Haz clic en un nodo para tumbarlo o recuperarlo.</p>
+      <svg id="mapa" viewBox="0 0 600 400" role="img" aria-label="Mapa de la red de hospitales"></svg>
+    </section>
+
+    <section class="panel combo" id="combo">
+      <h2>Combo propuesto</h2>
+      <div id="combo-cuerpo" class="vacio">
+        Pulsa <b>+ Paciente crítico</b> para ver cómo la red arma un combo <b>cama + medicina</b> entre hospitales.
+      </div>
+    </section>
+
+    <section class="panel inventario">
+      <h2>Inventario por hospital</h2>
+      <div id="inventario"></div>
+    </section>
+
+    <section class="panel eventos">
+      <h2>Eventos en la red</h2>
+      <ul id="log"></ul>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
